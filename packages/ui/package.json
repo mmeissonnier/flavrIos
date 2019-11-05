@@ -1,0 +1,70 @@
+{
+  "name": "@flavr/ui",
+  "version": "0.0.1",
+  "private": true,
+  "main": "dist/index.cs.js",
+  "module": "dist/index.es.js",
+  "files": [
+    "dist"
+  ],
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "ui:android": "react-native run-android",
+    "ui:ios": "react-native run-ios",
+    "start": "react-native start",
+    "test": "jest",
+    "lint": "eslint .",
+    "tsc": "tsc",
+    "build:js": "rollup -c",
+    "build:types": "tsc -p tsconfig.type.json",
+    "ui:build": "rm -rf dist && yarn build:js && yarn build:types",
+    "ui:storybook": "start-storybook -p 7007"
+  },
+  "peerDependencies": {
+    "react": "16.9.0",
+    "react-native": "0.61.3",
+    "react-native-svg": "^9.13.3",
+    "styled-components": "^4.4.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/runtime": "^7.6.3",
+    "@react-native-community/eslint-config": "^0.0.5",
+    "@storybook/addon-actions": "^5.2.5",
+    "@storybook/addon-knobs": "^5.2.5",
+    "@storybook/addon-links": "^5.2.5",
+    "@storybook/addons": "^5.2.5",
+    "@storybook/react-native": "^5.2.5",
+    "@storybook/react-native-server": "^5.2.5",
+    "@types/jest": "^24.0.21",
+    "@types/lodash": "^4.14.144",
+    "@types/react": "^16.9.11",
+    "@types/react-native": "^0.60.22",
+    "@types/react-test-renderer": "^16.9.1",
+    "@types/styled-components": "^4.1.20",
+    "@types/webpack-env": "^1.14.1",
+    "babel-jest": "^24.9.0",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-styled-components": "^1.10.6",
+    "eslint": "^6.6.0",
+    "jest": "^24.9.0",
+    "metro-react-native-babel-preset": "^0.56.3",
+    "react": "16.9.0",
+    "react-dom": "16.9.0",
+    "react-native": "0.61.3",
+    "react-native-svg": "^9.13.3",
+    "react-native-svg-transformer": "^0.13.0",
+    "react-native-vector-icons": "^6.6.0",
+    "react-test-renderer": "16.9.0",
+    "rollup": "^1.26.0",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "styled-components": "^4.4.1",
+    "typescript": "^3.6.4"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}

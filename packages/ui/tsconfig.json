@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+      "allowSyntheticDefaultImports": true,
+      "esModuleInterop": true,
+      "jsx": "react",
+      "lib": ["es6", "es7", "es2017"],
+      "moduleResolution": "node",
+      "strict": true,
+      "target": "esnext",
+      "sourceRoot": "./src",
+      "sourceMap": true,
+      "rootDir": "./src",
+      "baseUrl": "./src",
+    },
+    "exclude": [
+      "node_modules", 
+      "**/node_modules", 
+      "src/**/*.test.ts",
+      "src/**/*.test.tsx",
+      "src/**/*.stories.ts",
+      "src/**/*.stories.tsx",
+      "src/App.tsx",
+      "storybook",
+      "src/stories.ts"]
+}
