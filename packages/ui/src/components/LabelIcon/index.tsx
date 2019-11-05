@@ -29,7 +29,7 @@ export const LabelIcon: FC<LabelIconProps> = ({
       font={font}
       size={size}
       transform={transform}
-      margin="0 0 0 10px">
+      margin="0 0 0 8px">
       {children}
     </Label>
   </Row>
