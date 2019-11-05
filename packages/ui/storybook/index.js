@@ -11,7 +11,13 @@ configure(() => {
 }, module);
 
 const CenterLayout = storyFn => (
-  <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+  <View
+    style={{
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: 'rgb(69,70,71)',
+    }}>
     {storyFn()}
   </View>
 );

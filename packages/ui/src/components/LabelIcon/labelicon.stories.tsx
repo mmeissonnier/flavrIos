@@ -1,7 +1,7 @@
 import React from 'react';
 import {storiesOf} from '@storybook/react-native';
 import {LabelIcon} from '.';
-import {boolean, text, number, color, select} from '@storybook/addon-knobs';
+import {text, number, color, select} from '@storybook/addon-knobs';
 
 storiesOf('Label with Icon', module).add('default', () => (
   <LabelIcon
