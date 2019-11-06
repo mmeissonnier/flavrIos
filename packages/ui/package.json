@@ -9,16 +9,17 @@
   ],
   "types": "dist/index.d.ts",
   "scripts": {
-    "ui:android": "react-native run-android",
-    "ui:ios": "react-native run-ios",
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
     "tsc": "tsc",
     "build:js": "rollup -c",
     "build:types": "tsc -p tsconfig.type.json",
-    "ui:build": "rm -rf dist && yarn build:js && yarn build:types",
-    "ui:storybook": "start-storybook -p 7007"
+    "build": "rm -rf dist && yarn build:js && yarn build:types",
+    "storybook": "start-storybook -p 7007",
+    "pods": "cd ios && rm -rf Pods && pod cache clean --all && pod install"
   },
   "peerDependencies": {
     "react": "16.9.0",

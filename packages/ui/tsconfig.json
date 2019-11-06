@@ -10,7 +10,7 @@
       "sourceRoot": "./src",
       "sourceMap": true,
       "rootDir": "./src",
-      "baseUrl": "./src",
+      "baseUrl": "./src"
     },
     "exclude": [
       "node_modules", 

@@ -1,7 +1,7 @@
 import React, {FC} from 'react';
 import {View, Text} from 'react-native';
 
-export const Home: FC = () => (
+export const CategoryList: FC = () => (
   <View
     style={{
       flex: 1,

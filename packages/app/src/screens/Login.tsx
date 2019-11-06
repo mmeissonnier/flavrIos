@@ -1,7 +1,8 @@
-import React, {FC} from 'react';
-import {View, Text} from 'react-native';
+import React from 'react';
+import {View, Text, Button} from 'react-native';
+import {NavigationStackScreenComponent} from 'react-navigation-stack';
 
-export const Login: FC = () => (
+export const Login: NavigationStackScreenComponent = ({navigation}) => (
   <View
     style={{
       flex: 1,
@@ -10,5 +11,11 @@ export const Login: FC = () => (
       backgroundColor: 'purple',
     }}>
     <Text>LOGIN SCREEN</Text>
+    <Button
+      title="Go"
+      onPress={() => {
+        navigation.navigate({routeName: 'home'});
+      }}
+    />
   </View>
 );
