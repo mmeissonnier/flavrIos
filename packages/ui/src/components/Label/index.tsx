@@ -1,7 +1,7 @@
 import {FC} from 'react';
-import {LabelProps} from './types';
-import styled from 'styled-components/native';
 import {ViewProps} from 'react-native';
+import styled from 'styled-components/native';
+import {LabelProps} from './types';
 
 export const Label: FC<LabelProps & ViewProps> = styled.Text<LabelProps>`
   font-family: ${({font}) => (font ? font : 'Montserrat')};
@@ -10,5 +10,6 @@ export const Label: FC<LabelProps & ViewProps> = styled.Text<LabelProps>`
   background-color: transparent;
   padding: ${({padding}) => (padding ? padding : '0')}
   margin: ${({margin}) => (margin ? margin : '0')}
+  text-align: ${({align}) => (align ? align : 'left')}
   text-transform: ${({transform}) => (transform ? transform : 'none')};
 `;

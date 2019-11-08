@@ -1,12 +1,19 @@
-module.exports = {
-  presets: [
-    '@babel/preset-env',
-    '@babel/preset-react',
-    '@babel/preset-typescript',
-  ],
-  plugins: [
-    '@babel/plugin-proposal-class-properties',
-    'babel-plugin-styled-components',
-  ],
-  include: ['src/**', 'node_modules/react-native-vector-icons/**'],
+module.exports = api => {
+  api.cache(true);
+
+  return {
+    presets: [
+      '@babel/preset-env',
+      '@babel/preset-react',
+      '@babel/preset-typescript',
+    ],
+    plugins: [
+      '@babel/plugin-proposal-class-properties',
+      [
+        'babel-plugin-styled-components',
+        {ssr: false, transpileTemplateLiterals: true},
+      ],
+    ],
+    include: ['src/index.ts', 'src/components/**', 'node_modules/**'],
+  };
 };

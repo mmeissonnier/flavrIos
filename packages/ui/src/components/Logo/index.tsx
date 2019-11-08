@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
-import Svg, {G, Path} from 'react-native-svg';
 import {TextStyle} from 'react-native';
+import Svg, {G, Path} from 'react-native-svg';
 
 export const Logo: FC<TextStyle> = ({color = 'white'}) => (
   <Svg width="141px" height="29px" viewBox="0 0 141 29">

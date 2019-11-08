@@ -23,7 +23,11 @@ export default {
       format: 'es',
     },
   ],
-  external: [...externals, 'styled-components/native'],
+  external: [
+    ...externals,
+    'styled-components/native',
+    'react-native-vector-icons/Ionicons',
+  ],
   plugins: [
     resolve({extensions}),
     babel({extensions, babelrc: false, configFile: './babel.config.build.js'}),

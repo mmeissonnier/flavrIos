@@ -252,7 +252,7 @@ DEPENDENCIES:
   - ReactCommon/jscallinvoker (from `../node_modules/react-native/ReactCommon`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - RNSVG (from `../node_modules/react-native-svg`)
-  - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
+  - RNVectorIcons (from `../node_modules/react-native-vector-icons/RNVectorIcons.podspec`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -311,7 +311,7 @@ EXTERNAL SOURCES:
   RNSVG:
     :path: "../node_modules/react-native-svg"
   RNVectorIcons:
-    :path: "../node_modules/react-native-vector-icons"
+    :podspec: "../node_modules/react-native-vector-icons/RNVectorIcons.podspec"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -345,6 +345,6 @@ SPEC CHECKSUMS:
   RNVectorIcons: 0bb4def82230be1333ddaeee9fcba45f0b288ed4
   Yoga: 02036f6383c0008edb7ef0773a0e6beb6ce82bd1
 
-PODFILE CHECKSUM: dcb26915520cf3f32432e15789e755bd979bc73d
+PODFILE CHECKSUM: d4e36a9952f3af7e6803a015ff15ad640a534abe
 
 COCOAPODS: 1.8.4

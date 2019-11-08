@@ -1,4 +1,4 @@
 import { FC } from 'react';
-import { LabelProps } from './types';
 import { ViewProps } from 'react-native';
+import { LabelProps } from './types';
 export declare const Label: FC<LabelProps & ViewProps>;

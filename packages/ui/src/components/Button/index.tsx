@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {ViewProps} from 'react-native';
+import {ViewProps, GestureResponderEvent} from 'react-native';
 import Svg, {Defs, LinearGradient, Stop, Rect} from 'react-native-svg';
 import styled from 'styled-components/native';
 
@@ -9,9 +9,11 @@ const ButtonContainer = styled.TouchableOpacity`
   overflow: hidden;
 `;
 
-export const Button: FC<ViewProps> = ({children, style}) => {
+export const Button: FC<
+  ViewProps & {onPress?: (event: GestureResponderEvent) => void}
+> = ({children, style, onPress}) => {
   return (
-    <ButtonContainer style={style}>
+    <ButtonContainer style={style} onPress={onPress}>
       <Svg
         width="100%"
         height="100%"

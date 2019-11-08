@@ -1,9 +1,9 @@
 import React, {FC} from 'react';
+import {Image, ViewProps} from 'react-native';
 import styled from 'styled-components/native';
 import {RecipeCardProps} from './types';
 import {LabelIcon} from '../LabelIcon';
 import {Label} from '../Label';
-import {Image} from 'react-native';
 
 const Wrapper = styled.TouchableOpacity`
   background-color: white;
@@ -20,14 +20,15 @@ const InfoWrapper = styled.View`
   padding: 0 20px 20px 20px;
 `;
 
-export const RecipeCard: FC<RecipeCardProps> = ({
+export const RecipeCard: FC<RecipeCardProps & ViewProps> = ({
   image,
   title,
   category,
   infos,
   onPress,
+  style,
 }) => (
-  <Wrapper onPress={onPress}>
+  <Wrapper onPress={onPress} style={style}>
     <Image
       source={{uri: image}}
       style={{width: '100%', height: 128}}

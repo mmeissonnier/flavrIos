@@ -2,8 +2,8 @@
   "name": "@flavr/ui",
   "version": "0.0.1",
   "private": true,
-  "main": "dist/index.cs.js",
-  "module": "dist/index.es.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
   "files": [
     "dist"
   ],
@@ -23,6 +23,7 @@
   },
   "peerDependencies": {
     "react": "16.9.0",
+    "react-dom": "16.9.0",
     "react-native": "0.61.3",
     "react-native-svg": "^9.13.3",
     "react-native-vector-icons": "^6.6.0",
