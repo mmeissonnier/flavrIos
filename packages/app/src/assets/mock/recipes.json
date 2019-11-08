@@ -1,0 +1,170 @@
+[
+    {
+        "id":"1",
+        "title": "American burger",
+        "image": "http://www.club-sandwich.net/images/photorecettes/burger-regime-123rf.jpg",
+        "category": "MAIN_DISH",
+        "shortInfo": {
+            "timeInMinutes": 30,
+            "level":"EASY",
+            "people": 1
+        },
+        "ingredients":[
+            "1 steak 100% pure beef",
+            "1 letuce",
+            "1 tomato",
+            "1 giant pickle",
+            "1 oignon",
+            "2 slices of cheddar cheese",
+            "1 special burger bread"
+        ],
+        "instructions": [
+            "Cut the bread in 2",
+            "Cut the tomato in slices",
+            "Cut the pickle in slices",
+            "Cook the steak",
+            "Put the steak, the pickles, and the rest into the bread",
+            "Eat the whole"
+        ]
+    },
+    {
+        "id":"2",
+        "title": "Pasta Salad",
+        "image": "https://images.immediate.co.uk/production/volatile/sites/2/2019/07/OLI0719-Everyday_PastaSalad_32470-1bdb945.jpg?quality=45&crop=6px,1886px,2987px,1285px&resize=1880,808",
+        "category": "SALAD",
+        "shortInfo": {
+            "timeInMinutes": 10,
+            "level":"EASY",
+            "people": 4
+        },
+        "ingredients":[
+            "1 steak 100% pure beef",
+            "1 letuce",
+            "1 tomato",
+            "1 giant pickle",
+            "1 oignon",
+            "2 slices of cheddar cheese",
+            "1 special burger bread"
+        ],
+        "instructions": [
+            "Cut the bread in 2",
+            "Cut the tomato in slices",
+            "Cut the pickle in slices",
+            "Cook the steak",
+            "Put the steak, the pickles, and the rest into the bread",
+            "Eat the whole"
+        ]
+    },
+    {
+        "id":"3",
+        "title": "Pancakes",
+        "image": "https://files.meilleurduchef.com/mdc/photo/recette/pancake/pancake-640.jpg",
+        "category": "BREAKFAST",
+        "shortInfo": {
+            "timeInMinutes": 15,
+            "level":"EASY",
+            "people": 4
+        },
+        "ingredients":[
+            "1 steak 100% pure beef",
+            "1 letuce",
+            "1 tomato",
+            "1 giant pickle",
+            "1 oignon",
+            "2 slices of cheddar cheese",
+            "1 special burger bread"
+        ],
+        "instructions": [
+            "Cut the bread in 2",
+            "Cut the tomato in slices",
+            "Cut the pickle in slices",
+            "Cook the steak",
+            "Put the steak, the pickles, and the rest into the bread",
+            "Eat the whole"
+        ]
+    },
+    {
+        "id":"4",
+        "title": "Gino's Lasagna",
+        "image": "https://www.simplyrecipes.com/wp-content/uploads/2012/11/Vegetarian-Lasagna-LEAD-1.jpg",
+        "category": "PASTA",
+        "shortInfo": {
+            "timeInMinutes": 30,
+            "level":"EASY",
+            "people": 4
+        },
+        "ingredients":[
+            "1 steak 100% pure beef",
+            "1 letuce",
+            "1 tomato",
+            "1 giant pickle",
+            "1 oignon",
+            "2 slices of cheddar cheese",
+            "1 special burger bread"
+        ],
+        "instructions": [
+            "Cut the bread in 2",
+            "Cut the tomato in slices",
+            "Cut the pickle in slices",
+            "Cook the steak",
+            "Put the steak, the pickles, and the rest into the bread",
+            "Eat the whole"
+        ]
+    },
+    {
+        "id":"5",
+        "title": "T-Bone of the titans",
+        "image": "https://www.canalvie.com/polopoly_fs/1.3692722!/image/t-bone.jpg_gen/derivatives/cvlandscape_499_281/t-bone.jpg",
+        "category": "MAIN_DISH",
+        "shortInfo": {
+            "timeInMinutes": 60,
+            "level":"AVERAGE",
+            "people": 2
+        },
+        "ingredients":[
+            "1 steak 100% pure beef",
+            "1 letuce",
+            "1 tomato",
+            "1 giant pickle",
+            "1 oignon",
+            "2 slices of cheddar cheese",
+            "1 special burger bread"
+        ],
+        "instructions": [
+            "Cut the bread in 2",
+            "Cut the tomato in slices",
+            "Cut the pickle in slices",
+            "Cook the steak",
+            "Put the steak, the pickles, and the rest into the bread",
+            "Eat the whole"
+        ]
+    },
+    {
+        "id":"6",
+        "title": "Green smoothie",
+        "image": "https://www.mesinspirationsculinaires.com/wp-content/uploads/2019/08/le-green-smoothie-facile-1-620x330.jpg",
+        "category": "BEVERAGE",
+        "shortInfo": {
+            "timeInMinutes": 10,
+            "level":"EASY",
+            "people": 1
+        },
+        "ingredients":[
+            "1 steak 100% pure beef",
+            "1 letuce",
+            "1 tomato",
+            "1 giant pickle",
+            "1 oignon",
+            "2 slices of cheddar cheese",
+            "1 special burger bread"
+        ],
+        "instructions": [
+            "Cut the bread in 2",
+            "Cut the tomato in slices",
+            "Cut the pickle in slices",
+            "Cook the steak",
+            "Put the steak, the pickles, and the rest into the bread",
+            "Eat the whole"
+        ]
+    }
+]

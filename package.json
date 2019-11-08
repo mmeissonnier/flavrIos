@@ -15,10 +15,9 @@
     ]
   },
   "scripts": {
-    "symlink": "wml add packages/ui packages/app/node_modules/@flavr/ui && wml start",
-    "app:ios": "lerna run app:ios",
-    "ui:ios": "lerna run ui:ios",
-    "ui:storybook": "lerna run ui:storybook",
+    "app:ios": "lerna run ios --scope @flavr/app ",
+    "ui:ios": "lerna run ios --scope @flavr/ui",
+    "ui:storybook": "lerna run storybook --scope @flavr/ui",
     "clean": "rm -rf node_modules && lerna clean --yes && lerna bootstrap --ci"
   },
   "devDependencies": {
@@ -42,10 +41,7 @@
     "eslint": "^6.6.0",
     "jest": "^24.9.0",
     "lerna": "^3.18.3",
-    "react": "16.9.0",
-    "react-dom": "16.9.0",
     "react-test-renderer": "16.9.0",
-    "typescript": "^3.6.4",
-    "wml": "^0.0.83"
+    "typescript": "^3.6.4"
   }
 }
