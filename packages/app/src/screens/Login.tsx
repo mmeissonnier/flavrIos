@@ -12,12 +12,12 @@ const TextInput = styled(TextField)`
 const LoginButton = styled(Button)`
   width: 100%;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 50px;
 `;
 
 export const Login: NavigationStackScreenComponent = ({navigation}) => (
   <Page>
-    <Column justifyContent="center" alignItems="center">
+    <Column justifyContent="center" alignItems="center" flex={1}>
       <Logo color="black" />
     </Column>
     <Column flex={2}>

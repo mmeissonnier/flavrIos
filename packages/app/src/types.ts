@@ -15,7 +15,8 @@ export type RecipeCategory =
   | 'SOUP'
   | 'SALAD'
   | 'BREAKFAST'
-  | 'HEALTHY';
+  | 'HEALTHY'
+  | 'BEVERAGE';
 
 export type RecipeLevel = 'EASY' | 'AVERAGE' | 'HARD';
 
@@ -24,3 +25,18 @@ export type RecipeShortInfo = {
   level: string | RecipeLevel;
   people: number;
 };
+
+export type Store = {
+  recipes: Recipe[];
+  favorites: string[];
+  categories: {[key: string]: string} | null;
+};
+
+export type Action = {
+  type: string;
+  payload?: any;
+};
+export interface StoreInterface {
+  state: Store;
+  dispatch: (action: Action) => void;
+}

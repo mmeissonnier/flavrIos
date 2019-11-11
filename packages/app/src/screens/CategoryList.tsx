@@ -1,13 +1,12 @@
-import React from 'react';
+import React, {FC} from 'react';
 import {FlatList} from 'react-navigation';
 import {TouchableOpacity} from 'react-native';
-import {NavigationStackScreenComponent} from 'react-navigation-stack';
+import {NavigationStackScreenProps} from 'react-navigation-stack';
 import {Label} from '@flavr/ui';
 import styled from 'styled-components/native';
 import {Page} from '../components/layout/Page';
-import categories from '../assets/mock/categories.json';
-import {getCategory} from '../helpers/recipeHelper';
-import {RecipeCategory} from 'src/types';
+import {StoreInterface} from '../types';
+import {withAppContext} from '../hoc/withAppContext';
 
 const StyledItem = styled(TouchableOpacity)`
   background-color: white;
@@ -17,17 +16,25 @@ const StyledItem = styled(TouchableOpacity)`
   margin-bottom: 20px;
 `;
 
-export const CategoryList: NavigationStackScreenComponent = ({navigation}) => (
+export const Component: FC<NavigationStackScreenProps & StoreInterface> = ({
+  navigation,
+  state,
+}) => (
   <Page>
     <FlatList
-      data={categories}
+      data={Object.keys(state.categories || {})}
       renderItem={({item}: {item: string}) => (
         <StyledItem
           onPress={() => {
-            navigation.push('recipeList', {category: item});
+            navigation.push('recipeList', {
+              category: item,
+              title: state.categories
+                ? state.categories[item].toUpperCase()
+                : null,
+            });
           }}>
           <Label color="#333333" size={16} padding="20px" transform="uppercase">
-            {getCategory(item as RecipeCategory)}
+            {state.categories ? state.categories[item] : 'N.A'}
           </Label>
         </StyledItem>
       )}
@@ -35,3 +42,5 @@ export const CategoryList: NavigationStackScreenComponent = ({navigation}) => (
     />
   </Page>
 );
+
+export const CategoryList = withAppContext(Component);

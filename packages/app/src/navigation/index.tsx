@@ -4,11 +4,12 @@ import {createStackNavigator} from 'react-navigation-stack';
 import {createBottomTabNavigator, BottomTabBar} from 'react-navigation-tabs';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {Login} from '../screens/Login';
+import {Preloading} from '../screens/Preloading';
 import {CategoryList} from '../screens/CategoryList';
 import {Home} from '../screens/Home';
 import {RecipeList} from '../screens/RecipeList';
+import {RecipeDetail} from '../screens/RecipeDetail';
 import {Settings} from '../screens/Settings';
-import {getCategory} from '../helpers/recipeHelper';
 
 const headerOptions = {
   headerTitleStyle: {
@@ -23,6 +24,7 @@ const cardStyle = {
 
 const AuthStack = createStackNavigator(
   {
+    preloading: Preloading,
     login: Login,
   },
   {
@@ -37,6 +39,14 @@ const HomeStack = createStackNavigator(
       path: 'flavr/home',
       navigationOptions: () => ({
         title: 'FLAVR',
+        ...headerOptions,
+      }),
+    },
+    recipe: {
+      screen: RecipeDetail,
+      path: 'flavr/recipe/:recipeId',
+      navigationOptions: ({navigation}) => ({
+        title: 'RECIPE',
         ...headerOptions,
       }),
     },
@@ -60,7 +70,14 @@ const CategoryListStack = createStackNavigator(
       screen: RecipeList,
       path: 'flavr/category/:category',
       navigationOptions: ({navigation}) => ({
-        title: getCategory(navigation.getParam('category')).toUpperCase(),
+        ...headerOptions,
+      }),
+    },
+    recipe: {
+      screen: RecipeDetail,
+      path: 'flavr/recipe/:recipeId',
+      navigationOptions: ({navigation}) => ({
+        title: 'RECIPE',
         ...headerOptions,
       }),
     },

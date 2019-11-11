@@ -2,15 +2,18 @@ import React, {FC} from 'react';
 import {FlatList} from 'react-navigation';
 import styled from 'styled-components/native';
 import {RecipeCard} from '@flavr/ui';
-import {Recipe, RecipeCategory} from '../../types';
-import {getCategory, formatRecipeShortInfo} from '../../helpers/recipeHelper';
+import {Recipe} from '../../types';
+import {formatRecipeShortInfo} from '../../helpers/recipeHelper';
 import {ListEmpty} from '../ListEmpty';
 
 const StyledRecipeCard = styled(RecipeCard)`
   margin-bottom: 20px;
 `;
 
-export const RecipeCardList: FC<{data: Recipe[]}> = ({data}) => (
+export const RecipeCardList: FC<{
+  data: Recipe[] | null;
+  onPress: (id: string) => void;
+}> = ({data, onPress}) => (
   <FlatList
     data={data}
     ListEmptyComponent={ListEmpty}
@@ -26,8 +29,11 @@ export const RecipeCardList: FC<{data: Recipe[]}> = ({data}) => (
     }
     renderItem={({item}: {item: Recipe}) => (
       <StyledRecipeCard
+        onPress={() => {
+          onPress(item.id);
+        }}
         title={item.title}
-        category={getCategory(item.category as RecipeCategory)}
+        category={item.category}
         infos={formatRecipeShortInfo(item.shortInfo)}
         image={item.image}
       />
