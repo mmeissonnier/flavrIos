@@ -1,5 +1,6 @@
 import { FC } from 'react';
-declare type ContainerProps = {
+import { ViewProps } from 'react-native';
+declare type ContainerProps = ViewProps & {
     gutter: number;
 };
 export declare const Container: FC<ContainerProps>;

@@ -1,8 +1,8 @@
 import {FC} from 'react';
 import styled from 'styled-components/native';
-import {ViewStyle} from 'react-native';
+import {ViewProps} from 'react-native';
 
-type ContainerProps = {
+type ContainerProps = ViewProps & {
   gutter: number;
 };
 

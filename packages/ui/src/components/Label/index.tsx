@@ -1,9 +1,9 @@
 import {FC} from 'react';
-import {ViewProps} from 'react-native';
+import {ViewProps, TextProps} from 'react-native';
 import styled from 'styled-components/native';
 import {LabelProps} from './types';
 
-export const Label: FC<LabelProps & ViewProps> = styled.Text<LabelProps>`
+export const Label: FC<LabelProps & TextProps> = styled.Text<LabelProps>`
   font-family: ${({font}) => (font ? font : 'Montserrat')};
   font-size: ${({size}) => (size ? size : 16)};
   color: ${({color}) => (color ? color : 'black')};

@@ -250,7 +250,7 @@ var Logo = function Logo(_ref) {
 };
 
 function _templateObject$5() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  flex: ", ";\n  justify-content: ", ";\n  align-items: ", ";\n  padding: ", ";\n"]);
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: row;\n  flex: ", ";\n  justify-content: ", ";\n  align-items: ", ";\n  padding: ", ";\n  margin: ", ";\n"]);
 
   _templateObject$5 = function _templateObject() {
     return data;
@@ -260,7 +260,7 @@ function _templateObject$5() {
 }
 var Row$2 = styled.View(_templateObject$5(), function (_ref) {
   var flex = _ref.flex;
-  return flex ? flex : '1';
+  return flex ? flex : 'none';
 }, function (_ref2) {
   var justifyContent = _ref2.justifyContent;
   return justifyContent ? justifyContent : 'flex-start';
@@ -268,8 +268,11 @@ var Row$2 = styled.View(_templateObject$5(), function (_ref) {
   var alignItems = _ref3.alignItems;
   return alignItems ? alignItems : 'flex-start';
 }, function (_ref4) {
-  var padding = _ref4.padding;
-  return padding ? padding : '0';
+  var pad = _ref4.pad;
+  return pad ? pad : '0';
+}, function (_ref5) {
+  var marg = _ref5.marg;
+  return marg ? marg : '0';
 });
 
 function _templateObject$6() {
@@ -283,7 +286,7 @@ function _templateObject$6() {
 }
 var Column = styled.View(_templateObject$6(), function (_ref) {
   var flex = _ref.flex;
-  return flex ? flex : '1';
+  return flex ? flex : 'none';
 }, function (_ref2) {
   var justifyContent = _ref2.justifyContent;
   return justifyContent ? justifyContent : 'flex-start';
@@ -291,8 +294,8 @@ var Column = styled.View(_templateObject$6(), function (_ref) {
   var alignItems = _ref3.alignItems;
   return alignItems ? alignItems : 'flex-start';
 }, function (_ref4) {
-  var padding = _ref4.padding;
-  return padding ? padding : '0';
+  var pad = _ref4.pad;
+  return pad ? pad : '0';
 });
 
 function _templateObject$7() {
@@ -309,12 +312,101 @@ var Container = styled.View(_templateObject$7(), function (_ref) {
   return "0 ".concat(gutter, "px");
 });
 
+function _templateObject$8() {
+  var data = _taggedTemplateLiteral(["\n  min-width: 10px;\n  min-height: 10px;\n  background-color: #ff8c2b;\n  border-radius: 20px;\n  margin-right: 14px;\n  align-items: center;\n  justify-content: center;\n  padding: ", ";\n  margin-top: ", ";\n"]);
+
+  _templateObject$8 = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+var Bullet = styled.View(_templateObject$8(), function (_ref) {
+  var index = _ref.index;
+  return index ? '2px' : 0;
+}, function (_ref2) {
+  var index = _ref2.index;
+  return index ? 0 : '5px';
+});
+var ListItem = function ListItem(_ref3) {
+  var children = _ref3.children,
+      index = _ref3.index,
+      color = _ref3.color,
+      margin = _ref3.margin;
+  return React.createElement(Row$2, {
+    marg: margin
+  }, React.createElement(Bullet, {
+    index: index
+  }, index !== undefined && React.createElement(Label, {
+    size: 11,
+    align: "center",
+    style: {
+      width: 13,
+      height: 13,
+      lineHeight: 13
+    },
+    color: "white",
+    font: "Montserrat-Medium"
+  }, index)), React.createElement(Label, {
+    size: 16,
+    color: color || 'black'
+  }, children));
+};
+
+var RecipeDetailHeader = function RecipeDetailHeader(_ref) {
+  var image = _ref.image,
+      title = _ref.title,
+      category = _ref.category,
+      infos = _ref.infos;
+  return React.createElement(Column, {
+    alignItems: "center"
+  }, React.createElement(reactNative.Image, {
+    source: {
+      uri: image
+    },
+    style: {
+      width: '100%',
+      height: 192
+    }
+  }), React.createElement(Label, {
+    color: "#9E9E9E",
+    font: "Montserrat",
+    size: 13,
+    transform: "uppercase",
+    margin: "10px 0 6px 0"
+  }, category), React.createElement(Label, {
+    color: "#333333",
+    font: "Montserrat-Medium",
+    size: 24,
+    transform: "uppercase",
+    margin: "0 0 18px 0"
+  }, title), React.createElement(Row$2, {
+    justifyContent: "space-between",
+    pad: "0 20px",
+    style: {
+      width: '100%'
+    }
+  }, infos.map(function (info) {
+    return React.createElement(LabelIcon, {
+      key: info.icon,
+      icon: info.icon,
+      font: "Montserrat-Light",
+      size: 16,
+      iconSize: 18,
+      color: "#979797",
+      transform: "capitalize"
+    }, info.label);
+  })));
+};
+
 exports.Button = Button;
 exports.Column = Column;
 exports.Container = Container;
 exports.Label = Label;
 exports.LabelIcon = LabelIcon;
+exports.ListItem = ListItem;
 exports.Logo = Logo;
 exports.RecipeCard = RecipeCard;
+exports.RecipeDetailHeader = RecipeDetailHeader;
 exports.Row = Row$2;
 exports.TextField = TextField;
