@@ -48,6 +48,9 @@ const HomeStack = createStackNavigator(
       navigationOptions: ({navigation}) => ({
         title: 'RECIPE',
         ...headerOptions,
+        headerStyle: {
+          backgroundColor: 'transparent',
+        },
       }),
     },
   },
@@ -69,15 +72,14 @@ const CategoryListStack = createStackNavigator(
     recipeList: {
       screen: RecipeList,
       path: 'flavr/category/:category',
-      navigationOptions: ({navigation}) => ({
+      navigationOptions: () => ({
         ...headerOptions,
       }),
     },
     recipe: {
       screen: RecipeDetail,
       path: 'flavr/recipe/:recipeId',
-      navigationOptions: ({navigation}) => ({
-        title: 'RECIPE',
+      navigationOptions: () => ({
         ...headerOptions,
       }),
     },
@@ -108,6 +110,13 @@ const FavoritesStack = createStackNavigator({
     screen: RecipeList,
     path: 'flavr/favorites',
     navigationOptions: () => ({title: 'FAVORITES', ...headerOptions}),
+  },
+  recipe: {
+    screen: RecipeDetail,
+    path: 'flavr/recipe/:recipeId',
+    navigationOptions: () => ({
+      ...headerOptions,
+    }),
   },
 });
 

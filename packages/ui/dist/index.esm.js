@@ -2,7 +2,7 @@ import React from 'react';
 import Svg, { Defs, LinearGradient, Stop, Rect, G, Path } from 'react-native-svg';
 import styled from 'styled-components/native';
 import Icon from 'react-native-vector-icons/Ionicons';
-import { Image } from 'react-native';
+import { Image, ImageBackground, TouchableWithoutFeedback } from 'react-native';
 
 function _taggedTemplateLiteral(strings, raw) {
   if (!raw) {
@@ -350,10 +350,12 @@ var RecipeDetailHeader = function RecipeDetailHeader(_ref) {
   var image = _ref.image,
       title = _ref.title,
       category = _ref.category,
-      infos = _ref.infos;
+      infos = _ref.infos,
+      children = _ref.children,
+      onPress = _ref.onPress;
   return React.createElement(Column, {
     alignItems: "center"
-  }, React.createElement(Image, {
+  }, React.createElement(ImageBackground, {
     source: {
       uri: image
     },
@@ -361,7 +363,9 @@ var RecipeDetailHeader = function RecipeDetailHeader(_ref) {
       width: '100%',
       height: 192
     }
-  }), React.createElement(Label, {
+  }, React.createElement(TouchableWithoutFeedback, {
+    onPress: onPress
+  }, children)), React.createElement(Label, {
     color: "#9E9E9E",
     font: "Montserrat",
     size: 13,

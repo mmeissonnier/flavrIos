@@ -357,10 +357,12 @@ var RecipeDetailHeader = function RecipeDetailHeader(_ref) {
   var image = _ref.image,
       title = _ref.title,
       category = _ref.category,
-      infos = _ref.infos;
+      infos = _ref.infos,
+      children = _ref.children,
+      onPress = _ref.onPress;
   return React.createElement(Column, {
     alignItems: "center"
-  }, React.createElement(reactNative.Image, {
+  }, React.createElement(reactNative.ImageBackground, {
     source: {
       uri: image
     },
@@ -368,7 +370,9 @@ var RecipeDetailHeader = function RecipeDetailHeader(_ref) {
       width: '100%',
       height: 192
     }
-  }), React.createElement(Label, {
+  }, React.createElement(reactNative.TouchableWithoutFeedback, {
+    onPress: onPress
+  }, children)), React.createElement(Label, {
     color: "#9E9E9E",
     font: "Montserrat",
     size: 13,

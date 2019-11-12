@@ -8,11 +8,12 @@
  * @format
  */
 
-import React, {useReducer} from 'react';
+import React, {useReducer, useEffect} from 'react';
 import {createAppContainer, NavigationNavigator} from 'react-navigation';
 import Navigator from './navigation';
 import {AppContextProvider} from './context';
 import {Store, Action} from './types';
+import AsyncStorage from '@react-native-community/async-storage';
 
 const initialState: Store = {
   recipes: [],
@@ -21,23 +22,33 @@ const initialState: Store = {
 };
 
 const reducer = (state: Store, action: Action) => {
+  let favorites;
   switch (action.type) {
     case 'ADD_FAVORITE':
-      if (action.payload) {
+      if (action.payload && !state.favorites.includes(action.payload)) {
+        favorites = state.favorites.concat([action.payload]);
+        AsyncStorage.setItem('@flavr.favorites', JSON.stringify(favorites));
         return {
           ...state,
-          favorites: state.favorites.concat([action.payload]),
+          favorites,
         };
       }
       break;
     case 'REMOVE_FAVORITE':
       if (action.payload) {
+        favorites = state.favorites.filter(item => item !== action.payload);
+        AsyncStorage.setItem('@flavr.favorites', JSON.stringify(favorites));
         return {
           ...state,
-          favorites: state.favorites.filter(item => item !== action.payload),
+          favorites,
         };
       }
       break;
+    case 'INIT_FAVORITES':
+      return {
+        ...state,
+        favorites: action.payload,
+      };
     case 'INIT_RECIPES':
       return {
         ...state,
@@ -63,6 +74,21 @@ const AppContainer = createAppContainer(Navigator as NavigationNavigator<
 
 const App = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
+  useEffect(() => {
+    const checkFavorites = async () => {
+      try {
+        const favorites = await AsyncStorage.getItem('@flavr.favorites');
+        if (!favorites) {
+          AsyncStorage.setItem('@flavr.favorites', JSON.stringify([]));
+        } else {
+          dispatch({type: 'INIT_FAVORITES', payload: JSON.parse(favorites)});
+        }
+      } catch (error) {
+        console.error(error.message);
+      }
+    };
+    checkFavorites();
+  }, []);
   return (
     <AppContextProvider value={{state, dispatch}}>
       <AppContainer />

@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import {Column, Row} from '../layout';
-import {Image} from 'react-native';
+import {Image, TouchableWithoutFeedback, ImageBackground} from 'react-native';
 import {Label} from '../Label';
 import {LabelIcon} from '../LabelIcon';
 import {RecipeHeaderProps} from './types';
@@ -10,9 +10,15 @@ export const RecipeDetailHeader: FC<RecipeHeaderProps> = ({
   title,
   category,
   infos,
+  children,
+  onPress,
 }) => (
   <Column alignItems="center">
-    <Image source={{uri: image}} style={{width: '100%', height: 192}} />
+    <ImageBackground source={{uri: image}} style={{width: '100%', height: 192}}>
+      <TouchableWithoutFeedback onPress={onPress}>
+        {children}
+      </TouchableWithoutFeedback>
+    </ImageBackground>
     <Label
       color="#9E9E9E"
       font="Montserrat"

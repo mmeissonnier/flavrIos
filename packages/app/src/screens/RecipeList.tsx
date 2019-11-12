@@ -8,16 +8,19 @@ import {RecipeCardList} from '../components/RecipeCardList';
 import {StoreInterface} from '../types';
 import {withAppContext} from '../hoc/withAppContext';
 
-// TODO: Fetch data based on route + params
-
 const Component: FC<NavigationStackScreenProps & StoreInterface> = ({
   navigation,
   state,
 }) => {
   const categoryParam = navigation.getParam('category');
+  const isFavoritesRoute = navigation.state.routeName === 'favorites';
   const data = useMemo(() => {
     return state.recipes
-      .filter(recipe => recipe.category === categoryParam)
+      .filter(
+        recipe =>
+          (isFavoritesRoute && state.favorites.includes(recipe.id)) ||
+          (categoryParam && recipe.category === categoryParam),
+      )
       .map(item => ({
         ...item,
         category: state.categories ? state.categories[item.category] : 'N.A',
