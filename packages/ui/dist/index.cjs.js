@@ -349,7 +349,10 @@ var ListItem = function ListItem(_ref3) {
     font: "Montserrat-Medium"
   }, index)), React.createElement(Label, {
     size: 16,
-    color: color || 'black'
+    color: color || 'black',
+    style: {
+      flex: 1
+    }
   }, children));
 };
 

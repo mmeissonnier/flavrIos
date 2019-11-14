@@ -1,7 +1,7 @@
 import React, {useEffect, FC} from 'react';
 import {NavigationStackScreenProps} from 'react-navigation-stack';
 import {ImageBackground, StyleSheet, ActivityIndicator} from 'react-native';
-import firebase from 'react-native-firebase';
+import firestore from '@react-native-firebase/firestore';
 import SplashScreen from '../assets/images/splash.png';
 import {Column} from '@flavr/ui';
 import {StoreInterface} from '../types';
@@ -12,8 +12,8 @@ const Component: FC<NavigationStackScreenProps & StoreInterface> = ({
   dispatch,
 }) => {
   useEffect(() => {
-    const recipeRef = firebase.firestore().collection('recipes');
-    const categoriesRef = firebase.firestore().collection('categories');
+    const recipeRef = firestore().collection('recipes');
+    const categoriesRef = firestore().collection('categories');
 
     const getData = async () => {
       let results = await recipeRef.get();

@@ -40,7 +40,7 @@ export const ListItem: FC<ListItemProps & ViewStyle> = ({
         </Label>
       )}
     </Bullet>
-    <Label size={16} color={color || 'black'}>
+    <Label size={16} color={color || 'black'} style={{flex: 1}}>
       {children}
     </Label>
   </Row>

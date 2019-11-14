@@ -1,6 +1,6 @@
 import React from 'react';
 import {NavigationStackScreenComponent} from 'react-navigation-stack';
-import firebase from 'react-native-firebase';
+import firestore from '@react-native-firebase/firestore';
 import {Label} from '@flavr/ui';
 import {Page} from '../components/layout/Page';
 import {Recipe} from 'src/types';
@@ -11,12 +11,11 @@ import {Button} from 'react-native';
 
 export const Settings: NavigationStackScreenComponent = ({navigation}) => {
   const addNewEntry = (data: Recipe) => {
-    const ref = firebase
-      .firestore()
+    const ref = firestore()
       .collection('recipes')
       .doc();
 
-    firebase.firestore().runTransaction(async transaction => {
+    firestore().runTransaction(async transaction => {
       transaction.set(ref, data);
     });
   };

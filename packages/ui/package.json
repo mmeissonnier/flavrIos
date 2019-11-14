@@ -9,9 +9,9 @@
   ],
   "types": "dist/index.d.ts",
   "scripts": {
-    "android": "react-native run-android",
-    "ios": "react-native run-ios",
-    "start": "react-native start",
+    "android": "npx react-native run-android",
+    "ios": "npx react-native run-ios",
+    "start": "npx react-native start",
     "test": "jest",
     "lint": "eslint .",
     "tsc": "tsc",
@@ -24,7 +24,7 @@
   "peerDependencies": {
     "react": "16.9.0",
     "react-dom": "16.9.0",
-    "react-native": "0.61.3",
+    "react-native": "0.61.4",
     "react-native-svg": "^9.13.3",
     "react-native-vector-icons": "^6.6.0",
     "styled-components": "^4.4.1"
