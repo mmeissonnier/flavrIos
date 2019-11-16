@@ -1,6 +1,6 @@
 import React from 'react';
 import {NavigationStackScreenComponent} from 'react-navigation-stack';
-import firestore from '@react-native-firebase/firestore';
+// import firestore from '@react-native-firebase/firestore';
 import {Label} from '@flavr/ui';
 import {Page} from '../components/layout/Page';
 import {Recipe} from 'src/types';

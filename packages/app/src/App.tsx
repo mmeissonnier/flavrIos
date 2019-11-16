@@ -67,10 +67,9 @@ const reducer = (state: Store, action: Action) => {
   return state;
 };
 
-const AppContainer = createAppContainer(Navigator as NavigationNavigator<
-  any,
-  any
->);
+const AppContainer = createAppContainer(
+  Navigator as NavigationNavigator<any, any>,
+);
 
 const App = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -84,7 +83,8 @@ const App = () => {
           dispatch({type: 'INIT_FAVORITES', payload: JSON.parse(favorites)});
         }
       } catch (error) {
-        console.error(error.message);
+        console.warn(error.message);
+        AsyncStorage.setItem('@flavr.favorites', JSON.stringify([]));
       }
     };
     checkFavorites();

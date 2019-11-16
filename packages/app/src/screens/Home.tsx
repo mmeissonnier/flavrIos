@@ -1,7 +1,7 @@
 import React, {FC, useMemo} from 'react';
 import {FlatList} from 'react-navigation';
 import {NavigationStackScreenProps} from 'react-navigation-stack';
-import {Label} from '@flavr/ui';
+import {Label, Column} from '@flavr/ui';
 import {Page} from '../components/layout/Page';
 import {Recipe, StoreInterface} from '../types';
 import {Image, TouchableOpacity} from 'react-native';
@@ -30,32 +30,33 @@ const Component: FC<NavigationStackScreenProps & StoreInterface> = ({
         transform="uppercase">
         Featured recipes
       </Label>
-      <FlatList
-        data={data}
-        keyExtractor={item => item.id}
-        horizontal
-        renderItem={({item}: {item: Recipe}) => (
-          <TouchableOpacity
-            onPress={() => {
-              navigation.push('recipe', {recipeId: item.id});
-            }}
-            style={{
-              height: 195,
-              marginRight: 14,
-            }}>
-            <Image
-              resizeMode="cover"
-              source={{uri: item.image}}
-              style={{
-                width: 208,
-                height: 128,
-                borderRadius: 4,
-                backgroundColor: 'white',
+      <Column>
+        <FlatList
+          data={data}
+          keyExtractor={item => item.id}
+          horizontal
+          renderItem={({item}: {item: Recipe}) => (
+            <TouchableOpacity
+              onPress={() => {
+                navigation.push('recipe', {recipeId: item.id});
               }}
-            />
-          </TouchableOpacity>
-        )}
-      />
+              style={{
+                marginRight: 14,
+              }}>
+              <Image
+                resizeMode="cover"
+                source={{uri: item.image}}
+                style={{
+                  width: 208,
+                  height: 128,
+                  borderRadius: 4,
+                  backgroundColor: 'white',
+                }}
+              />
+            </TouchableOpacity>
+          )}
+        />
+      </Column>
       <Label
         size={18}
         color="#979797"

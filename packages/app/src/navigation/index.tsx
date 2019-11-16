@@ -105,20 +105,25 @@ const SettingsStack = createStackNavigator(
   },
 );
 
-const FavoritesStack = createStackNavigator({
-  favorites: {
-    screen: RecipeList,
-    path: 'flavr/favorites',
-    navigationOptions: () => ({title: 'FAVORITES', ...headerOptions}),
+const FavoritesStack = createStackNavigator(
+  {
+    favorites: {
+      screen: RecipeList,
+      path: 'flavr/favorites',
+      navigationOptions: () => ({title: 'FAVORITES', ...headerOptions}),
+    },
+    recipe: {
+      screen: RecipeDetail,
+      path: 'flavr/recipe/:recipeId',
+      navigationOptions: () => ({
+        ...headerOptions,
+      }),
+    },
   },
-  recipe: {
-    screen: RecipeDetail,
-    path: 'flavr/recipe/:recipeId',
-    navigationOptions: () => ({
-      ...headerOptions,
-    }),
+  {
+    cardStyle,
   },
-});
+);
 
 const TabNavigator = createBottomTabNavigator(
   {
