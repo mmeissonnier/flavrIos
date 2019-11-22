@@ -13,7 +13,9 @@
       "**/@react-native-*",
       "**/@react-native-*/**",
       "**/styled-components",
-      "**/styled-components/**"
+      "**/styled-components/**",
+      "**/detox",
+      "**/detox/**"
     ]
   },
   "scripts": {

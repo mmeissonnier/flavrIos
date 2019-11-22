@@ -8,4 +8,5 @@ export { Row } from './components/layout/Row';
 export { Column } from './components/layout/Column';
 export { Container } from './components/layout/Container';
 export { ListItem } from './components/ListItem';
+export { Image } from './components/Image';
 export { RecipeDetailHeader } from './components/RecipeDetailHeader';

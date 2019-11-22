@@ -10,6 +10,7 @@ import {RecipeCard, Column} from '@flavr/ui';
 import {Recipe} from '../../types';
 import {formatRecipeShortInfo} from '../../helpers/recipeHelper';
 import {ListEmpty} from '../ListEmpty';
+import {ImageEmpty} from '../ImageEmpty';
 
 const StyledRecipeCard = styled(RecipeCard)`
   margin-bottom: 20px;
@@ -62,6 +63,7 @@ export const RecipeCardList: FC<{
                 onPress(item.id);
               }}
               title={item.title}
+              imageEmpty={ImageEmpty}
               category={item.category}
               infos={formatRecipeShortInfo(item.shortInfo)}
               image={item.image}

@@ -1,12 +1,13 @@
 import React, {FC, useMemo} from 'react';
 import {FlatList} from 'react-navigation';
 import {NavigationStackScreenProps} from 'react-navigation-stack';
-import {Label, Column} from '@flavr/ui';
+import {Label, Column, Image} from '@flavr/ui';
 import {Page} from '../components/layout/Page';
 import {Recipe, StoreInterface} from '../types';
-import {Image, TouchableOpacity} from 'react-native';
+import {TouchableOpacity} from 'react-native';
 import {RecipeCardList} from '../components/RecipeCardList';
 import {withAppContext} from '../hoc/withAppContext';
+import {ImageEmpty} from '../components/ImageEmpty';
 
 const Component: FC<NavigationStackScreenProps & StoreInterface> = ({
   navigation,
@@ -45,12 +46,14 @@ const Component: FC<NavigationStackScreenProps & StoreInterface> = ({
               }}>
               <Image
                 resizeMode="cover"
+                imageEmpty={ImageEmpty}
                 source={{uri: item.image}}
+                width={208}
+                height={128}
                 style={{
-                  width: 208,
-                  height: 128,
                   borderRadius: 4,
                   backgroundColor: 'white',
+                  overflow: 'hidden',
                 }}
               />
             </TouchableOpacity>

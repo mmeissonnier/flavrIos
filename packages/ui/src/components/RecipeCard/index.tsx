@@ -1,6 +1,7 @@
 import React, {FC} from 'react';
-import {Image, ViewProps} from 'react-native';
+import {ViewProps} from 'react-native';
 import styled from 'styled-components/native';
+import {Image} from '../Image';
 import {RecipeCardProps} from './types';
 import {LabelIcon} from '../LabelIcon';
 import {Label} from '../Label';
@@ -22,16 +23,20 @@ const InfoWrapper = styled.View`
 
 export const RecipeCard: FC<RecipeCardProps & ViewProps> = ({
   image,
+  imageEmpty,
   title,
   category,
   infos,
   onPress,
   style,
+  testID,
 }) => (
-  <Wrapper onPress={onPress} style={style}>
+  <Wrapper onPress={onPress} style={style} testID={testID}>
     <Image
       source={{uri: image}}
-      style={{width: '100%', height: 128}}
+      width="100%"
+      height={128}
+      imageEmpty={imageEmpty}
       resizeMode="cover"
     />
     <InfoWrapper>

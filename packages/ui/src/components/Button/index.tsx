@@ -9,11 +9,11 @@ const ButtonContainer = styled.TouchableOpacity`
   overflow: hidden;
 `;
 
-export const Button: FC<
-  ViewProps & {onPress?: (event: GestureResponderEvent) => void}
-> = ({children, style, onPress}) => {
+export const Button: FC<ViewProps & {
+  onPress?: (event: GestureResponderEvent) => void;
+}> = ({children, style, onPress, testID}) => {
   return (
-    <ButtonContainer style={style} onPress={onPress}>
+    <ButtonContainer style={style} onPress={onPress} testID={testID}>
       <Svg
         width="100%"
         height="100%"

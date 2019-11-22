@@ -36,10 +36,12 @@ var ButtonContainer = styled.TouchableOpacity(_templateObject());
 var Button = function Button(_ref) {
   var children = _ref.children,
       style = _ref.style,
-      onPress = _ref.onPress;
+      onPress = _ref.onPress,
+      testID = _ref.testID;
   return React.createElement(ButtonContainer, {
     style: style,
-    onPress: onPress
+    onPress: onPress,
+    testID: testID
   }, React.createElement(Svg__default, {
     width: "100%",
     height: "100%",
@@ -149,6 +151,57 @@ function _templateObject$3() {
 }
 var TextField = styled.TextInput(_templateObject$3());
 
+function _templateObject$4() {
+  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex: ", ";\n  justify-content: ", ";\n  align-items: ", ";\n  padding: ", ";\n"]);
+
+  _templateObject$4 = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+var Column = styled.View(_templateObject$4(), function (_ref) {
+  var flex = _ref.flex;
+  return flex ? flex : 'none';
+}, function (_ref2) {
+  var justifyContent = _ref2.justifyContent;
+  return justifyContent ? justifyContent : 'flex-start';
+}, function (_ref3) {
+  var alignItems = _ref3.alignItems;
+  return alignItems ? alignItems : 'flex-start';
+}, function (_ref4) {
+  var pad = _ref4.pad;
+  return pad ? pad : '0';
+});
+
+var Image = function Image(_ref) {
+  var source = _ref.source,
+      resizeMode = _ref.resizeMode,
+      width = _ref.width,
+      height = _ref.height,
+      imageEmpty = _ref.imageEmpty,
+      style = _ref.style,
+      testID = _ref.testID;
+  var ImageEmpty = imageEmpty;
+  return React.createElement(Column, {
+    testID: testID,
+    alignItems: "center",
+    justifyContent: "center",
+    style: [{
+      width: width,
+      height: height
+    }, style]
+  }, ImageEmpty && React.createElement(ImageEmpty, null), React.createElement(reactNative.Image, {
+    source: source,
+    resizeMode: resizeMode,
+    style: {
+      width: width,
+      height: height,
+      position: 'absolute'
+    }
+  }));
+};
+
 function _templateObject3() {
   var data = _taggedTemplateLiteral(["\n  padding: 0 20px 20px 20px;\n"]);
 
@@ -169,36 +222,38 @@ function _templateObject2() {
   return data;
 }
 
-function _templateObject$4() {
+function _templateObject$5() {
   var data = _taggedTemplateLiteral(["\n  background-color: white;\n  border-radius: 4px;\n  overflow: hidden;\n  width: 100%;\n"]);
 
-  _templateObject$4 = function _templateObject() {
+  _templateObject$5 = function _templateObject() {
     return data;
   };
 
   return data;
 }
-var Wrapper = styled.TouchableOpacity(_templateObject$4());
+var Wrapper = styled.TouchableOpacity(_templateObject$5());
 var Row$1 = styled.View(_templateObject2());
 var InfoWrapper = styled.View(_templateObject3());
 var RecipeCard = function RecipeCard(_ref) {
   var image = _ref.image,
+      imageEmpty = _ref.imageEmpty,
       title = _ref.title,
       category = _ref.category,
       infos = _ref.infos,
       onPress = _ref.onPress,
-      style = _ref.style;
+      style = _ref.style,
+      testID = _ref.testID;
   return React.createElement(Wrapper, {
     onPress: onPress,
-    style: style
-  }, React.createElement(reactNative.Image, {
+    style: style,
+    testID: testID
+  }, React.createElement(Image, {
     source: {
       uri: image
     },
-    style: {
-      width: '100%',
-      height: 128
-    },
+    width: "100%",
+    height: 128,
+    imageEmpty: imageEmpty,
     resizeMode: "cover"
   }), React.createElement(InfoWrapper, null, React.createElement(Label, {
     color: "#9E9E9E",
@@ -249,16 +304,16 @@ var Logo = function Logo(_ref) {
   }))));
 };
 
-function _templateObject$5() {
+function _templateObject$6() {
   var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex-direction: row;\n  flex: ", ";\n  justify-content: ", ";\n  align-items: ", ";\n  padding: ", ";\n  margin: ", ";\n"]);
 
-  _templateObject$5 = function _templateObject() {
+  _templateObject$6 = function _templateObject() {
     return data;
   };
 
   return data;
 }
-var Row$2 = styled.View(_templateObject$5(), function (_ref) {
+var Row$2 = styled.View(_templateObject$6(), function (_ref) {
   var flex = _ref.flex;
   return flex ? flex : 'none';
 }, function (_ref2) {
@@ -273,29 +328,6 @@ var Row$2 = styled.View(_templateObject$5(), function (_ref) {
 }, function (_ref5) {
   var marg = _ref5.marg;
   return marg ? marg : '0';
-});
-
-function _templateObject$6() {
-  var data = _taggedTemplateLiteral(["\n  display: flex;\n  flex: ", ";\n  justify-content: ", ";\n  align-items: ", ";\n  padding: ", ";\n"]);
-
-  _templateObject$6 = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-var Column = styled.View(_templateObject$6(), function (_ref) {
-  var flex = _ref.flex;
-  return flex ? flex : 'none';
-}, function (_ref2) {
-  var justifyContent = _ref2.justifyContent;
-  return justifyContent ? justifyContent : 'flex-start';
-}, function (_ref3) {
-  var alignItems = _ref3.alignItems;
-  return alignItems ? alignItems : 'flex-start';
-}, function (_ref4) {
-  var pad = _ref4.pad;
-  return pad ? pad : '0';
 });
 
 function _templateObject$7() {
@@ -362,18 +394,20 @@ var RecipeDetailHeader = function RecipeDetailHeader(_ref) {
       category = _ref.category,
       infos = _ref.infos,
       children = _ref.children,
-      onPress = _ref.onPress;
+      imageEmpty = _ref.imageEmpty,
+      onPress = _ref.onPress,
+      testID = _ref.testID;
   return React.createElement(Column, {
-    alignItems: "center"
-  }, React.createElement(reactNative.ImageBackground, {
+    alignItems: "center",
+    testID: testID
+  }, React.createElement(Row$2, null, React.createElement(Image, {
     source: {
       uri: image
     },
-    style: {
-      width: '100%',
-      height: 192
-    }
-  }, React.createElement(reactNative.TouchableWithoutFeedback, {
+    width: "100%",
+    height: 192,
+    imageEmpty: imageEmpty
+  }), React.createElement(reactNative.TouchableWithoutFeedback, {
     onPress: onPress
   }, children)), React.createElement(Label, {
     color: "#9E9E9E",
@@ -409,6 +443,7 @@ var RecipeDetailHeader = function RecipeDetailHeader(_ref) {
 exports.Button = Button;
 exports.Column = Column;
 exports.Container = Container;
+exports.Image = Image;
 exports.Label = Label;
 exports.LabelIcon = LabelIcon;
 exports.ListItem = ListItem;

@@ -16,7 +16,7 @@ const LoginButton = styled(Button)`
 `;
 
 export const Login: NavigationStackScreenComponent = ({navigation}) => (
-  <Page>
+  <Page testID="flavr.screen.login">
     <Column justifyContent="center" alignItems="center" flex={1}>
       <Logo color="black" />
     </Column>

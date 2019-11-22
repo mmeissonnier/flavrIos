@@ -18,6 +18,7 @@ import {formatRecipeShortInfo} from '../helpers/recipeHelper';
 import {StoreInterface} from '../types';
 import {withAppContext} from '../hoc/withAppContext';
 import Icon from 'react-native-vector-icons/Ionicons';
+import {ImageEmpty} from '../components/ImageEmpty';
 
 const Component: FC<NavigationStackScreenProps & StoreInterface> = ({
   navigation,
@@ -67,6 +68,7 @@ const Component: FC<NavigationStackScreenProps & StoreInterface> = ({
             <RecipeDetailHeader
               image={recipe.image}
               title={recipe.title}
+              imageEmpty={ImageEmpty}
               onPress={() => {
                 setIsFavorite(!isFavorite);
               }}

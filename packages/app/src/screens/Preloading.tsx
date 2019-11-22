@@ -36,7 +36,10 @@ const Component: FC<NavigationStackScreenProps & StoreInterface> = ({
     getData();
   }, []);
   return (
-    <ImageBackground source={SplashScreen} style={StyleSheet.absoluteFill}>
+    <ImageBackground
+      source={SplashScreen}
+      style={StyleSheet.absoluteFill}
+      testID="flavr.screen.preloading">
       <Column alignItems="center" justifyContent="center" flex={1}>
         <ActivityIndicator color="white" size="large" />
       </Column>
